@@ -10,7 +10,6 @@ const Homepagecard = ({ data, thumbnail }) => {
     const state = useSelector((state) => state)
     const [isHovered, setIsHovered] = useState(false);
 
-    console.log(state)
     const template = {
         data,
         thumbnail

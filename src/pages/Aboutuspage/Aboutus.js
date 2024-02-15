@@ -11,8 +11,6 @@ import Navbar from '../../Component/Navbar';
 
 
 function Aboutus() {
-    // The URL to be shared
-    const shareUrl = 'promote my website';
 
     return (
         <>

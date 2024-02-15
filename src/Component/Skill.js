@@ -38,9 +38,6 @@ const Skills = () => {
         })))
     }
 
-    const handleEdit = () => {
-
-    }
 
 
     const handlesubmit = (e) => {

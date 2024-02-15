@@ -1,7 +1,6 @@
 import { Box, Button, Divider, IconButton, Stack, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import { setWorkexp } from '../redux/slice/resumeinfoslice';
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
@@ -22,7 +21,7 @@ const Workexp = () => {
 
     const [listworkexp, setListWorkExp] = useState([])
 
-    // console.log(listworkexp)
+    //to add item
     const handleaddnew = () => {
 
         if (jobtitle === '' || Organization === '' || startyear === '' || endyear === '') {
@@ -73,10 +72,6 @@ const Workexp = () => {
 
     return (
         <Box display={'flex'}>
-
-
-
-
 
             <Box width={'100%'}>
                 <Box border={1}>

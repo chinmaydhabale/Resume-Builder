@@ -18,7 +18,6 @@ const Detailfilling = () => {
 
     const state = useSelector((state) => state)
 
-    console.log(state)
 
     //Handles State of activeComponent
     const [activeComponent, setActiveComponent] = useState('personal');

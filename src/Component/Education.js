@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setEducation } from '../redux/slice/resumeinfoslice'
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import toast from 'react-hot-toast';
 
 
@@ -20,18 +19,11 @@ const Education = () => {
     const [startyear, setStartyear] = useState("")
     const [endyear, setEndyear] = useState("")
 
-    // const [educationdetail, setEducationDetail] = useState({
-    //     id: "",
-    //     type: "",
-    //     university: "",
-    //     degree: "",
-    //     startyear: "",
-    //     endyear: "",
-    // })
 
     const [listeducation, setListeducation] = useState([])
 
-    // console.log(listeducation)
+
+    //for add new item
     const handleaddnew = () => {
 
         if (type === '' || university === '' || degree === '' || startyear === '' || endyear === '') {
@@ -61,12 +53,14 @@ const Education = () => {
     }
 
 
+    //for delete
     const handledelete = (id) => {
         dispatch(setEducation(state.filter((edu) => {
             return edu.id !== id
         })))
     }
 
+    // for submit data
     const handlesubmit = (e) => {
         e.preventDefault();
         if (state === null) {
@@ -82,7 +76,6 @@ const Education = () => {
         setSubmited(true)
     }
 
-    console.log(state)
 
     return (
         <Stack direction={'row'} >
