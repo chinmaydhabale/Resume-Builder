@@ -49,6 +49,7 @@ const Education = () => {
             setDegree('')
             setStartyear('')
             setEndyear('')
+            setListeducation([])
         }
     }
 

@@ -1,5 +1,5 @@
 
-import { Box, Button, TextField, IconButton, Avatar, Stack, FormControl } from '@mui/material'
+import { Box, Button, TextField, IconButton, Avatar, Stack } from '@mui/material'
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPersonalInfo } from '../redux/slice/resumeinfoslice';

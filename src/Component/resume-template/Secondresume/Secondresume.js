@@ -1,4 +1,4 @@
-import { Avatar, Box, Card, Divider, Paper, Stack, Typography } from '@mui/material'
+import { Box, Card, Divider, Typography } from '@mui/material'
 import React from 'react'
 import './second.css'
 import HomeIcon from '@mui/icons-material/Home';
@@ -17,7 +17,7 @@ const Secondresume = () => {
             <Box className='upperresume' >
                 <Box className='profile'>
 
-                    <img className='imageofperson' src={state.resumeinfo.profileimage} />
+                    <img className='imageofperson' src={state.resumeinfo.profileimage} alt='' />
                     <Box className='profilebox' >
                         <Box className='profilename' >
                             {state.resumeinfo.personalinfo.name} {state.resumeinfo.personalinfo.lastName}

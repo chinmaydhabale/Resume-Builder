@@ -1,6 +1,6 @@
 import { Box, Button, Paper, } from '@mui/material';
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PersonalInfo from '../../Component/PersonalInfo';
 import Education from '../../Component/Education'
@@ -37,8 +37,7 @@ const Detailfilling = () => {
                 }
                 break;
             case 'education':
-                if (componentName === 'work' && state.resumeinfo.
-                    Education === null) {
+                if (componentName === 'work' && state.resumeinfo.Education === null) {
                     toast.error("Submit or add the Education information")
 
                 } else {

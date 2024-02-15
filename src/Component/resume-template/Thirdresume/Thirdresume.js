@@ -18,7 +18,7 @@ const Thirdresume = () => {
         <Box className='upperresume' >
           <Box className='profile'>
 
-            <img className='imageofperson' src={state.resumeinfo.profileimage} />
+            <img className='imageofperson' src={state.resumeinfo.profileimage} alt='' />
             <Box className='profilebox' >
               <Box className='profilename' >
                 {/* Chinmay Dhabale */}

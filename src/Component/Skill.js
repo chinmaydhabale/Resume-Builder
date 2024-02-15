@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setSkills } from '../redux/slice/resumeinfoslice';
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import toast from 'react-hot-toast';
 
 
@@ -25,6 +24,7 @@ const Skills = () => {
         } else {
             dispatch(state === null ? setSkills([...listskills, { id: Date.now(), skills: skill }]) : setSkills([...state, { id: Date.now(), skills: skill }]))
             setSkill('')
+            setListSkills([])
         }
     }
 

@@ -18,13 +18,12 @@ const Forthresume = () => {
                 <Box className='upperresume4' >
                     <Box className='profile4'>
 
-                        <img className='imageofperson' src={state.resumeinfo.profileimage} />
+                        <img className='imageofperson' src={state.resumeinfo.profileimage} alt='' />
                         <Box className='profilebox4' >
                             <Box className='profilename' >
                                 {state.resumeinfo.personalinfo.name} {state.resumeinfo.personalinfo.lastName}
 
                             </Box>
-
 
                         </Box>
                     </Box>

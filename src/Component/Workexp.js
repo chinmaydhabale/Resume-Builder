@@ -45,6 +45,7 @@ const Workexp = () => {
             setOrganization("")
             setEndyear("")
             setStartyear("")
+            setListWorkExp([])
         }
     }
 

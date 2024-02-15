@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import temp from '../../data/resumedata'
 import Homepagecard from './Homepagecard';
 import Navbar from '../../Component/Navbar';
 
 const Homepage = () => {
 
-    const [template, setTemplate] = useState(temp);
+
 
     return (
         <div className='template'>
@@ -15,7 +15,7 @@ const Homepage = () => {
                 <p>Select a Template to get started</p>
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', height: '80vh' }} >
-                {template.map((templates) => (
+                {temp.map((templates) => (
                     <Homepagecard
                         data={templates.data}
                         thumbnail={templates.thumbnail}

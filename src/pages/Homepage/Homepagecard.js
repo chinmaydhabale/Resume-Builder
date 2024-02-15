@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { setselectresume } from '../../redux/slice/templateslice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const Homepagecard = ({ data, thumbnail }) => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const state = useSelector((state) => state)
     const [isHovered, setIsHovered] = useState(false);
 
     const template = {
