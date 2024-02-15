@@ -1,0 +1,36 @@
+.firstcompo4 {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(134, 112, 156);
+
+}
+
+.profile4 {
+    text-align: center;
+}
+
+.bio {
+    padding: 15px 10px;
+    background-color: rgb(134, 112, 156);
+
+}
+
+.secondcompo4 {
+    padding: 0 10px;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+
+    * {
+
+        font-size: small;
+    }
+
+    .address4 {
+        font-size: smaller;
+        word-wrap: break-word;
+    }
+}

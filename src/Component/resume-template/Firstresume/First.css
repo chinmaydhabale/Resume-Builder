@@ -1,0 +1,13 @@
+.firstcompo1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.bio1 {
+    padding: 15px 10px;
+
+}
+
+.listpad1 {
+    padding-left: 25px;
+}

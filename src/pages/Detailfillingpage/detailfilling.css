@@ -1,0 +1,26 @@
+.bluebtn {
+    border-left: 4px solid blue;
+}
+
+.maindetail {
+    display: flex;
+    justify-content: space-around;
+}
+
+.detailbutton {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+@media screen and (max-width: 600px) {
+
+    .maindetail {
+        display: block;
+    }
+
+    .detailbutton {
+        width: 100%;
+        display: flex;
+    }
+}
