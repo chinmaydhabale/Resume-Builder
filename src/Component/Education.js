@@ -28,6 +28,7 @@ const Education = () => {
         if (type === '' || university === '' || degree === '' || startyear === '' || endyear === '') {
             toast.error("Fill all the data")
         } else {
+            //dispatch the data
             dispatch(state === null ? setEducation([...listeducation, {
                 id: Date.now(),
                 type: type,
@@ -66,8 +67,6 @@ const Education = () => {
     return (
         <Stack direction={'row'} >
 
-
-
             <Box padding={'15px'} width={'100%'}>
                 <Box sx={{ p: 3 }}>
                     <Typography variant='h4'>
@@ -78,6 +77,7 @@ const Education = () => {
                 <Divider />
 
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                    {/* show added data */}
                     {state && state.map((val) => {
                         return (<Box key={val.id} display={"flex"} border={"1px solid"} justifyContent={"space-between"} padding={"5px"}>
                             <Box>
@@ -97,6 +97,7 @@ const Education = () => {
                                     Endyear: {val.endyear}
                                 </Typography>
                             </Box>
+                            {/* To delete data */}
                             <Stack display={"inline"}>
                                 <IconButton onClick={() => handledelete(val.id)}>
                                     <DeleteIcon />
@@ -106,7 +107,7 @@ const Education = () => {
                     })}
                 </Box>
 
-
+                {/* for Education input  */}
                 <Box sx={{ p: 3 }}>
                     <TextField
                         label="Type"
@@ -153,6 +154,7 @@ const Education = () => {
                     </Stack>
                 </Box>
 
+                {/* for submit button  */}
                 <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: '9px' }}>
                     <Button variant="text" onClick={handleaddnew}>{state === null ? "Add" : "Add new"}</Button>
                 </Box>

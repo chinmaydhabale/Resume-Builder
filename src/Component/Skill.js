@@ -16,7 +16,7 @@ const Skills = () => {
 
 
 
-
+    //To add skills button function
     const handleaddnew = () => {
         if (skill === '') {
             toast.error("Fill the input")
@@ -27,10 +27,8 @@ const Skills = () => {
         }
     }
 
-    // console.log(listskills)
-
+    //To delete skills button function
     const handledelete = (id) => {
-
 
         dispatch(setSkills(state.filter((skill) => {
             return skill.id !== id
@@ -54,6 +52,7 @@ const Skills = () => {
                 </Box>
                 <Divider />
 
+                {/* To show data of skills  */}
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
                     {state && state.map((val) => {
                         return (<Box key={val.id} display={"flex"} border={"1px solid"} justifyContent={"space-between"} padding={"5px"}>
@@ -61,6 +60,7 @@ const Skills = () => {
                                 {val.skills}
                             </Typography>
 
+                            {/* delete data button  */}
                             <Stack display={"inline"}>
                                 <IconButton onClick={() => handledelete(val.id)}>
                                     <DeleteIcon />
@@ -70,6 +70,7 @@ const Skills = () => {
                     })}
                 </Box>
 
+                {/* skills input box  */}
                 <Box sx={{ p: 3 }}>
                     <Stack direction={'column'} spacing={3} sx={{ py: 3 }}>
                         <TextField
@@ -81,7 +82,7 @@ const Skills = () => {
 
                     </Stack>
 
-
+                    {/* to add data button  */}
                     <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: '9px' }}>
                         <Button variant="text" onClick={handleaddnew}>{state === null ? "Add" : "Add new"}</Button>
 

@@ -11,11 +11,13 @@ const Navbar = () => {
 
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', backgroundColor: '#1976d2', color: 'white', padding: 0, marginBottom: '5px' }}>
+            {/* for logo  */}
             <Box>
                 <IconButton onClick={() => navigate('/')}>
                     <img className='logoimg' src={Logo} alt="" />
                 </IconButton>
             </Box>
+            {/* for nav items  */}
             <div className='navname' >
                 <li style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>TEMPLATES</li>
                 <li style={{ cursor: 'pointer' }} onClick={() => navigate('/myresume')}>MYRESUME</li>

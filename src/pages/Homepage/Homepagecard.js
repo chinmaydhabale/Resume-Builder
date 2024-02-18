@@ -15,12 +15,13 @@ const Homepagecard = ({ data, thumbnail }) => {
         thumbnail
     }
 
+    //to select the resume button
     const onSubmit = () => {
         dispatch(setselectresume(template))
         navigate('/Detailfilling');
-
     };
 
+    // for resume hover effect and Set isHovered to true when the mouse leaves the image
     const handleHover = () => {
         setIsHovered(true);
     };

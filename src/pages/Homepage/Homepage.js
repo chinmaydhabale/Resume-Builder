@@ -15,11 +15,13 @@ const Homepage = () => {
                 <h1>Templates</h1>
                 <p>Select a Template to get started</p>
             </div>
+            {/* iterate all the templates */}
             <div className='AllTemplates' >
                 {temp.map((templates) => (
                     <Homepagecard
                         data={templates.data}
                         thumbnail={templates.thumbnail}
+                        key={templates.id}
                     />
                 ))}
             </div>

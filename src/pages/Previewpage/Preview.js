@@ -15,12 +15,14 @@ const Preview = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const state = useSelector((state) => state.template.selectresume)
-  const [FileName, setFileName] = useState("")
+  const [FileName, setFileName] = useState("") //to set file name
 
+  //for back button function
   const handleback = () => {
     navigate('/Detailfilling')
   }
 
+  //for download the resume function
   const handlesave = () => {
     const input = document.getElementById("print");
     console.log(document);
@@ -31,8 +33,7 @@ const Preview = () => {
         var width = pdf.internal.pageSize.getWidth();
         var height = pdf.internal.pageSize.getHeight();
         pdf.addImage(imgData, "JPEG", 0, 0, width, height);
-        // pdf.output('dataurlnewwindow');
-        pdf.save(`${FileName}.pdf`);
+        pdf.save(`${FileName}.pdf`); //save with file name
         toast.success("resume saved successfully")
         dispatch(setsaveresume(state))
         dispatch(setresumename(FileName))
@@ -51,14 +52,17 @@ const Preview = () => {
         <Navbar />
       </div>
       <div className='resumepreview' >
+        {/* for resume preview  */}
         <div className='resume' id='print' >
           {state.data}
 
         </div>
         <Box className='downloadbox' sx={{ border: '2px solid blue', padding: '18px', margin: 'auto', width: "50%" }}>
+          {/* for resume name */}
           <Box>
             <TextField onChange={(e) => setFileName(e.target.value)} />
           </Box>
+          {/* for buttons  */}
           <Box>
             <Button onClick={handleback}>Back</Button>
             <Button onClick={handlesave}>Save</Button>

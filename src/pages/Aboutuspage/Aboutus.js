@@ -43,7 +43,7 @@ function Aboutus() {
                     <div style={{ marginRight: "2vh" }}>
                         {/* Facebook share button */}
                         <FacebookShareButton
-                            url={'https://cv-builder-ruddy.vercel.app/'}
+                            url={'https://65d1d7011a48743bb481a8d4--mellow-alpaca-1587c3.netlify.app/'}
                             quote={'Title or jo bhi aapko likhna ho'}
                             hashtag={'#portfolio...'}
                         >
@@ -54,7 +54,7 @@ function Aboutus() {
                     <div style={{ marginRight: "2vh" }}>
                         {/* LinkedIn share button */}
                         <LinkedinShareButton
-                            url={'https://cv-builder-ruddy.vercel.app/'}
+                            url={'https://65d1d7011a48743bb481a8d4--mellow-alpaca-1587c3.netlify.app/'}
                             quote={'Title or jo bhi aapko likhna ho'}
                             hashtag={'#portfolio...'}
                         >
@@ -65,7 +65,7 @@ function Aboutus() {
                     <div style={{ marginRight: "2vh" }}>
                         {/* WhatsApp share button */}
                         <WhatsappShareButton
-                            url={'https://cv-builder-ruddy.vercel.app/'}
+                            url={'https://65d1d7011a48743bb481a8d4--mellow-alpaca-1587c3.netlify.app/'}
                             quote={'Title or jo bhi aapko likhna ho'}
                             hashtag={'#portfolio...'}
                         >

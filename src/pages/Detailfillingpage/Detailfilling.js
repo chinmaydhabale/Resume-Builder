@@ -47,13 +47,13 @@ const Detailfilling = () => {
 
                         setActiveComponent(componentName)
                     } else {
-                        toast.error("Submit or add the Education information")
+                        toast.error("add the Education information")
                     }
                 } else if (componentName === 'personal' || componentName === 'education') {
                     setActiveComponent(componentName)
                 }
                 else {
-                    toast.error("Submit or add the Education information")
+                    toast.error("add the Education information")
                 }
                 break;
             case 'work':
@@ -63,13 +63,13 @@ const Detailfilling = () => {
 
                         setActiveComponent(componentName)
                     } else {
-                        toast.error("Submit or add the Work information")
+                        toast.error("add the Work information")
                     }
                 } else if (componentName === 'personal' || componentName === 'education' || componentName === 'work') {
                     setActiveComponent(componentName)
                 }
                 else {
-                    toast.error("Submit or add the Work information")
+                    toast.error("add the Work information")
                 }
                 break;
             case 'keyskill':
@@ -80,7 +80,7 @@ const Detailfilling = () => {
                     setActiveComponent(componentName)
                 }
                 else {
-                    toast.error("Submit or add the Skill information")
+                    toast.error("add the Skill information")
                 }
                 break;
             default:
@@ -160,6 +160,7 @@ const Detailfilling = () => {
         <div>
             <Navbar />
             <div className='maindetail'>
+                {/* sidebar buttons */}
                 <Box className='detailbutton'>
                     <Button sx={{ border: "1px solid" }} style={{ backgroundColor: activeComponent === 'personal' ? '#1976d2' : 'white', color: activeComponent === 'personal' ? 'white' : '#1976d2' }} onClick={() => handleSidebarClick('personal')}>Personal Info</Button>
 
@@ -179,6 +180,7 @@ const Detailfilling = () => {
                     </div>
                 </Paper>
             </div>
+            {/* next and back component  */}
             <Box className='dfbtn' >
                 <Button onClick={handleBack} variant='outlined'>Back</Button>
                 <Button onClick={handleNext} variant='contained'>{activeComponent === 'keyskill' ? (

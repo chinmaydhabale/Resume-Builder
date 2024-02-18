@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const resumeInfo = createSlice({
     name: "resumeInfo",
     initialState: {
-        profileimage: "",
         personalinfo: null,
         Education: null,
         skills: null,
@@ -19,15 +18,12 @@ const resumeInfo = createSlice({
         setSkills: (state, action) => {
             state.skills = action.payload
         },
-        setprofile: (state, action) => {
-            state.profileimage = action.payload
-        },
         setWorkexp: (state, action) => {
             state.workexp = action.payload
         }
     }
 })
 
-export const { setPersonalInfo, setEducation, setSkills, setWorkexp, setprofile } = resumeInfo.actions;
+export const { setPersonalInfo, setEducation, setSkills, setWorkexp } = resumeInfo.actions;
 
 export default resumeInfo.reducer;

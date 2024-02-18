@@ -14,22 +14,26 @@ import resumetemplate4 from '../Utility/photos/resumetemplate4.jpg'
 const temp = [
     {
         thumbnail: resumetemplate1,
-        data: <Firstresume />
+        data: <Firstresume />,
+        id: 1
     },
 
     {
         thumbnail: resumetemplate2,
-        data: <Secondresume />
+        data: <Secondresume />,
+        id: 2
     },
 
     {
         thumbnail: resumetemplate3,
-        data: <Thirdresume />
+        data: <Thirdresume />,
+        id: 3
     },
 
     {
         thumbnail: resumetemplate4,
-        data: <Forthresume />
+        data: <Forthresume />,
+        id: 4
     }
 
 ]
