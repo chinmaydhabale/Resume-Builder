@@ -1,14 +1,26 @@
 .resumepreview {
     display: flex;
     justify-content: space-between;
+
 }
 
+.resume {
+    width: 80vw;
+    padding: 20px;
+}
+
+.downloadbox {
+    width: 20vw;
+}
 
 
 @media screen and (max-width: 600px) {
 
     .resumepreview {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
     }
 
     .resume {

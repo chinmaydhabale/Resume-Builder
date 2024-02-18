@@ -1,6 +1,13 @@
+.firstmaincompo {
+    padding-bottom: 20px;
+}
+
 .firstcompo1 {
     display: flex;
     justify-content: space-around;
+    padding: 15px;
+    gap: 25px;
+
 }
 
 .bio1 {

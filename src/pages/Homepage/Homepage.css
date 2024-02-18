@@ -1,4 +1,43 @@
-.templategrid {
+.AllTemplates {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.templateimgh {
+    height: 45vh;
+    width: 110%;
+}
+
+
+@media screen and (max-width: 800px) {
+    .AllTemplates {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .templateimgh {
+        height: 55vh;
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .templateimgh {
+        height: 60vh;
+        width: 50vw;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .templateimgh {
+        height: 50vh;
+        width: 60vw;
+    }
+
 }

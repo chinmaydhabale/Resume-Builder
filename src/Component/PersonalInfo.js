@@ -1,191 +1,97 @@
+import { Avatar, Box, Button, TextField } from '@mui/material'
+import React, { useState } from 'react'
+import './css/Personal.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { setPersonalInfo } from '../redux/slice/resumeinfoslice'
+import toast from 'react-hot-toast'
 
-import { Box, Button, TextField, IconButton, Avatar, Stack } from '@mui/material'
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setPersonalInfo } from '../redux/slice/resumeinfoslice';
-import { setprofile } from '../redux/slice/resumeinfoslice';
-import toast from 'react-hot-toast';
+const PersonalInfo = () => {
 
+    const dispatch = useDispatch()
+    const personalinfostate = useSelector((state) => state.resumeinfo.personalinfo)
 
+    const [isSubmit, setisSubmit] = useState(false)
 
-function PersonalInfo() {
-
-    const dispatch = useDispatch();
-    const state = useSelector((state) => state)
-    const [submitcolor, setsubmitcolor] = useState(false)
-    const [isSubmited, setisSubmited] = useState(true)
-
-
-    const [user, setUser] = useState({
-        name: "",
-        lastName: "",
-        email: "",
-        mobile: "",
-        address: "",
-        city: "",
-        state: "",
-        postalCode: "",
-        objective: "",
-    });
-
+    const [name, setName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [email, setEmail] = useState("")
+    const [mobile, setMobile] = useState("")
+    const [address, setAddress] = useState("")
+    const [city, setCity] = useState("")
+    const [state, setState] = useState("")
+    const [postalCode, setPostalCode] = useState("")
+    const [objective, setObjective] = useState("")
     const [image, setImage] = useState("")
 
+    //regex for email validation
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
 
-    // get input value and save to state 
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setUser({ ...user, [name]: value });
-    };
 
+    const handlesubmit = () => {
+        if (name === '' || lastName === '' || email === '' || mobile === '' || address === '' || city === '' || state === '' || postalCode === '' || objective === '' || image === '') {
+            toast.error("fill all the component")
+        } else if (!email.match(emailRegex)) {
+            toast.error('please fill valid email')
+        } else {
 
-    // Save user information
-    const handlesubmit = (e) => {
-        e.preventDefault();
-        dispatch(setPersonalInfo(user))
-        dispatch(dispatch(setprofile(image)))
-        toast.success("submited")
-        setsubmitcolor(true)
-        setisSubmited(false)
-    };
+            dispatch(setPersonalInfo({
+                name: name,
+                lastName: lastName,
+                email: email,
+                mobile: mobile,
+                address: address,
+                city: city,
+                state: state,
+                postalCode: postalCode,
+                objective: objective,
+                image: image
+            }))
+            setisSubmit(true)
+            toast.success('submited successfully')
+        }
 
-    // for edit the data 
-    const handlEdit = (e) => {
-        setisSubmited(true)
     }
-
+    console.log(personalinfostate)
 
     return (
+        <div className='maindivp'>
 
+            {personalinfostate !== null && <h2 style={{ color: 'green', padding: '15px' }}>Submited successfully</h2>}
 
-        <Box sx={{ border: "1px solid" }} >
-
-            {isSubmited ? "" : state.resumeinfo.personalinfo && <Box>
-                <li>Name:{state.resumeinfo.personalinfo.name} </li>
-                <li>Lastname:{state.resumeinfo.personalinfo.lastName} </li>
-                <li>email:{state.resumeinfo.personalinfo.email} </li>
-                <li>Mobile:{state.resumeinfo.personalinfo.mobile} </li>
-                <li>Address:{state.resumeinfo.personalinfo.address} </li>
-                <li>City:{state.resumeinfo.personalinfo.city} </li>
-                <li>State:{state.resumeinfo.personalinfo.state} </li>
-                <li>Postal Code:{state.resumeinfo.personalinfo.postalCode} </li>
-                <li>Objective:{state.resumeinfo.personalinfo.objective} </li>
-            </Box>}
-
-            {isSubmited && <form onSubmit={handlesubmit}>
-                <Box sx={{ display: "flex", flexDirection: "column", gap: "15px", }}>
-
-
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                        <Avatar sx={{ width: 100, height: 100 }} src={image} />
-                        <IconButton >
-                            <TextField type="file" required onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))} />
-                        </IconButton>
-                    </Box>
-                    <Stack direction={'row'} spacing={3}>
-                        {/* for name  */}
-                        <TextField
-                            label="Name"
-                            name="name"
-                            value={user.name}
-                            onChange={handleInputChange}
-                            fullWidth
-                            required
-
-                        />
-                        {/* for lastname  */}
-                        <TextField
-                            label="Last Name"
-                            name="lastName"
-                            value={user.lastName}
-                            onChange={handleInputChange}
-                            fullWidth
-                            required
-                        />
-                    </Stack>
-                    <Stack direction={'row'} spacing={3}>
-                        {/* for emali  */}
-                        <TextField
-                            label="Email"
-                            name="email"
-                            type='email'
-                            value={user.email}
-                            onChange={handleInputChange}
-                            fullWidth
-                            required
-                        />
-                        {/* for mobile number  */}
-                        <TextField
-                            label="Mobile"
-                            name="mobile"
-                            type='tel'
-                            value={user.mobile}
-                            onChange={handleInputChange}
-                            fullWidth
-                            required
-                        />
-                    </Stack>
-                    {/* for address  */}
-                    <TextField
-                        label="Address"
-                        name="address"
-                        value={user.address}
-                        onChange={handleInputChange}
-                        fullWidth
-                        required
-                    />
-                    {/* for city  */}
-                    <Stack direction={'row'} spacing={3}>
-                        <TextField
-                            label="city"
-                            name="city"
-                            value={user.city}
-                            onChange={handleInputChange}
-                            fullWidth
-                            required
-                        />
-                        {/* for state  */}
-                        <TextField
-                            label="state"
-                            name="state"
-                            value={user.state}
-                            onChange={handleInputChange}
-                            fullWidth
-                            required
-                        />
-                        {/* for postalcode  */}
-                        <TextField
-                            label="Postal code"
-                            name="postalCode"
-                            value={user.postalCode}
-                            onChange={handleInputChange}
-                            fullWidth
-                            required
-                        />
-                    </Stack>
-                    {/* for bio  */}
-                    <TextField
-                        label="Objective"
-                        name="objective"
-                        value={user.objective}
-                        onChange={handleInputChange}
-                        multiline
-                        fullWidth
-                        required
-                    />
-                    <Box sx={{ display: "flex", mt: 3, margin: "5px", alignItems: "center", justifyContent: "center" }}>
-
-                        {isSubmited ? (<Button type='submit' variant={submitcolor ? 'contained' : 'outlined'}>Submit</Button>) : ""}
-                    </Box>
-                </Box>
-            </form>}
-            <Box sx={{ display: "flex", mt: 3, margin: "5px", alignItems: "center", justifyContent: "center" }}>
-
-                {isSubmited ? "" : (<Button onClick={handlEdit} variant={submitcolor ? 'contained' : 'outlined'}>Edit</Button>)}
+            <Box className="imgbox">
+                <Avatar sx={{ width: 100, height: 100 }} src={image} />
+                <TextField className='inputimg' type="file" required onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))} />
             </Box>
+            <Box className="maininputbox">
+                <Box className='firstinput'>
+                    <TextField type="Text" label="name" onChange={(e) => setName(e.target.value)} fullWidth />
 
-        </Box>
-    );
+                    <TextField type="TextField" label="Lastname" onChange={(e) => setLastName(e.target.value)} fullWidth />
+                </Box>
+                <Box className="secondinput">
+                    <TextField type="TextField" label="email" onChange={(e) => setEmail(e.target.value)} fullWidth />
+                    <TextField type="TextField" label="mobile" onChange={(e) => setMobile(e.target.value)} fullWidth />
+                </Box>
+                <Box className="thirdinput">
+                    <TextField type="TextField" label="Address" onChange={(e) => setAddress(e.target.value)} fullWidth />
+                </Box>
+                <Box className="forthinput">
+                    <TextField type="TextField" label="City" onChange={(e) => setCity(e.target.value)} fullWidth />
+                    <TextField type="TextField" label="State" onChange={(e) => setState(e.target.value)} fullWidth />
+                    <TextField type="TextField" label="Postal Code" onChange={(e) => setPostalCode(e.target.value)} fullWidth />
+                </Box>
+                <Box className="fifthinput">
+                    <TextField type="TextField" label="Objective" onChange={(e) => setObjective(e.target.value)} fullWidth />
+                </Box>
+            </Box>
+            <Box className='psubmitbtn'>
+                <Button onClick={handlesubmit} variant={isSubmit ? 'contained' : 'outlined'}>
+                    Submit
+                </Button>
+            </Box>
+        </div>
+    )
 }
 
-export default PersonalInfo;
+export default PersonalInfo

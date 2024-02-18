@@ -10,7 +10,6 @@ const Workexp = () => {
 
     const dispatch = useDispatch()
     const state = useSelector((state) => state.resumeinfo.workexp)
-    const [submited, setSubmited] = useState(true)
 
 
     const [jobtitle, setJobTitle] = useState("")
@@ -57,25 +56,13 @@ const Workexp = () => {
         })))
     }
 
-    const Handlesubmit = (e) => {
-        e.preventDefault();
-        if (state === null) {
-            toast.error("Add the information first.")
-        } else {
 
-            setSubmited(false)
-        }
-    }
-
-    const onEdit = (e) => {
-        setSubmited(true)
-    }
 
     return (
         <Box display={'flex'}>
 
             <Box width={'100%'}>
-                <Box border={1}>
+                <Box sx={{ padding: '15px' }}>
                     <Box sx={{ p: 3 }}>
                         <Typography variant='h4'>
                             Work Expirience
@@ -86,7 +73,7 @@ const Workexp = () => {
                     </Box>
                     <Divider />
 
-                    <Box>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
                         {state && state.map((val) => {
                             return (<Box key={val.id} display={"flex"} border={"1px solid"} justifyContent={"space-between"} padding={"5px"}>
                                 <Box>
@@ -103,18 +90,18 @@ const Workexp = () => {
                                         Endyear: {val.endyear}
                                     </Typography>
                                 </Box>
-                                {submited && <Stack display={"inline"}>
+                                <Stack display={"inline"}>
                                     <IconButton onClick={() => handledelete(val.id)}>
                                         <DeleteIcon />
                                     </IconButton>
-                                </Stack>}
+                                </Stack>
                             </Box>)
                         })}
                     </Box>
 
 
 
-                    {submited && <Box sx={{ p: 3 }}>
+                    <Box sx={{ p: 3 }}>
 
                         <Stack direction={'row'} spacing={3} sx={{ py: 3 }}>
                             <TextField
@@ -155,19 +142,14 @@ const Workexp = () => {
 
 
 
-                    </Box>}
+                    </Box>
 
 
-                    {submited && <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: '9px' }}>
-                        {state === null ? (<Button variant="text" onClick={handleaddnew}>Add</Button>) : (<Button variant="text" onClick={handleaddnew}>Add new</Button>)}
-
-                    </Box>}
-
-
-                    <Box sx={{ display: "flex", mt: 3, margin: "5px", alignItems: "center", justifyContent: "center" }}>
-                        {submited ? (<Button onClick={Handlesubmit} variant='contained'>Submit</Button>) : (<Button onClick={onEdit} variant='contained'>Edit</Button>)}
+                    <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: '9px' }}>
+                        <Button variant="text" onClick={handleaddnew}>{state === null ? "Add" : "Add new"}</Button>
 
                     </Box>
+
 
                 </Box>
             </Box>

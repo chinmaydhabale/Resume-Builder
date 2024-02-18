@@ -1,17 +1,20 @@
 .maincompo {
     display: flex;
-    width: 100%;
-    height: 100%;
+
 }
 
 .firstcompo {
     border-right: 1px solid;
     background-color: beige;
+    padding: 15px;
+    width: 100%;
 }
 
 .secondcompo {
     padding-left: 5px;
     background-color: aquamarine;
+    padding: 15px;
+    width: 100%;
 }
 
 
@@ -20,9 +23,7 @@
 
     .maincompo {
         display: flex;
-        width: 100%;
-        height: 100%;
-        padding: auto;
+
     }
 
     .profile {

@@ -2,7 +2,8 @@
     display: flex;
     justify-content: space-around;
     background-color: rgb(134, 112, 156);
-
+    padding: 15px;
+    gap: 25px;
 }
 
 .profile4 {
@@ -10,13 +11,14 @@
 }
 
 .bio {
-    padding: 15px 10px;
+    padding: 15px 15px;
     background-color: rgb(134, 112, 156);
 
 }
 
 .secondcompo4 {
-    padding: 0 10px;
+    padding: 15px;
+    padding-top: 0;
 }
 
 

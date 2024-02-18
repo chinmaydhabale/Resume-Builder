@@ -1,0 +1,65 @@
+.maindivp {
+    padding-bottom: 30px;
+}
+
+.maininputbox {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 8px;
+}
+
+.imgbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 15px;
+}
+
+.inputimg {
+    width: 30%;
+
+}
+
+
+.firstinput {
+    display: flex;
+    gap: 8px;
+}
+
+
+.secondinput {
+    display: flex;
+    gap: 8px;
+}
+
+.forthinput {
+    display: flex;
+    gap: 8px;
+}
+
+.psubmitbtn {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+    .firstinput {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+
+    .secondinput {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .forthinput {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}

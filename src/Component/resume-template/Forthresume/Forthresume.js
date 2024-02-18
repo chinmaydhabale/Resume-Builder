@@ -13,12 +13,12 @@ const Forthresume = () => {
 
 
     return (
-        <Card>
+        <Card className='forthmaincompo'>
             <Box className="firstcompo4">
                 <Box className='upperresume4' >
                     <Box className='profile4'>
 
-                        <img className='imageofperson' src={state.resumeinfo.profileimage} alt='' />
+                        <img className='imageofperson' src={state.resumeinfo.personalinfo.image} alt='' />
                         <Box className='profilebox4' >
                             <Box className='profilename' >
                                 {state.resumeinfo.personalinfo.name} {state.resumeinfo.personalinfo.lastName}
@@ -31,7 +31,7 @@ const Forthresume = () => {
                 <Box className="address4" >
                     <span> <HomeIcon />{state.resumeinfo.personalinfo.address}</span>
                     <br />
-                    <span> <LocationCityIcon />{state.resumeinfo.personalinfo.city} {state.resumeinfo.personalinfo.postalCode}</span>
+                    <span> <LocationCityIcon />{state.resumeinfo.personalinfo.city} {state.resumeinfo.personalinfo.state} {state.resumeinfo.personalinfo.postalCode}</span>
                     <br />
                     <span><EmailIcon />{state.resumeinfo.personalinfo.email}</span>
                     <br />
@@ -55,8 +55,8 @@ const Forthresume = () => {
 
                                 <h1>{work.title}</h1>
                                 <li>{work.Organization}</li>
-                                <li>{work.startyear}</li>
-                                <li>{work.endyear}</li>
+                                <li>Start {work.startyear}</li>
+                                <li>End {work.endyear}</li>
                             </Box>
                         )
                     })}
@@ -72,8 +72,8 @@ const Forthresume = () => {
                             <h2>{edu.type}</h2>
                             <li>{edu.university}</li>
                             <li>{edu.degree}</li>
-                            <li>{edu.startyear}</li>
-                            <li>{edu.endyear}</li>
+                            <li>Start {edu.startyear}</li>
+                            <li>Complete {edu.endyear}</li>
                         </Box>)
                     })}
                 </Box>

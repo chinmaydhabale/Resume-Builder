@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { setselectresume } from '../../redux/slice/templateslice';
 import { useDispatch } from 'react-redux';
+import './Homepage.css'
 
 const Homepagecard = ({ data, thumbnail }) => {
 
@@ -35,9 +36,9 @@ const Homepagecard = ({ data, thumbnail }) => {
                 <div>
                     {/*Show Templates Dummy Images*/}
                     <img
+                        className='templateimgh'
                         style={{
-                            width: '100%',
-                            height: '45vh',
+
                             border: '3px solid black',
                             opacity: isHovered ? 0.7 : 1, // Set opacity when hovered
                         }}

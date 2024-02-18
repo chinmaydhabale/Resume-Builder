@@ -2,6 +2,7 @@ import React from 'react'
 import temp from '../../data/resumedata'
 import Homepagecard from './Homepagecard';
 import Navbar from '../../Component/Navbar';
+import './Homepage.css'
 
 const Homepage = () => {
 
@@ -10,11 +11,11 @@ const Homepage = () => {
     return (
         <div className='template'>
             <Navbar />
-            <div>
+            <div style={{ padding: '15px' }}>
                 <h1>Templates</h1>
                 <p>Select a Template to get started</p>
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', height: '80vh' }} >
+            <div className='AllTemplates' >
                 {temp.map((templates) => (
                     <Homepagecard
                         data={templates.data}

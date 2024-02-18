@@ -55,7 +55,7 @@ const Preview = () => {
           {state.data}
 
         </div>
-        <Box sx={{ border: '2px solid blue', padding: '18px', margin: 'auto', width: "50%" }}>
+        <Box className='downloadbox' sx={{ border: '2px solid blue', padding: '18px', margin: 'auto', width: "50%" }}>
           <Box>
             <TextField onChange={(e) => setFileName(e.target.value)} />
           </Box>

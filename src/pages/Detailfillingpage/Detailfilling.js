@@ -30,34 +30,57 @@ const Detailfilling = () => {
         // Validation logic for navigation between components
         switch (activeComponent) {
             case 'personal':
-                if (componentName === 'education' && state.resumeinfo.personalinfo === null) {
-                    toast.error("Submit the personal information")
-                } else {
-                    setActiveComponent(componentName)
+                if (componentName === 'education' || componentName === 'work' || componentName === 'keyskill') {
+                    if (state.resumeinfo.personalinfo !== null) {
+
+                        setActiveComponent(componentName)
+                    }
+                    else {
+                        toast.error("Submit the personal information")
+                    }
                 }
                 break;
             case 'education':
-                if (componentName === 'work' && state.resumeinfo.Education === null) {
-                    toast.error("Submit or add the Education information")
+                if (componentName === 'work' || componentName === 'keyskill') {
 
-                } else {
+                    if (state.resumeinfo.Education !== null) {
+
+                        setActiveComponent(componentName)
+                    } else {
+                        toast.error("Submit or add the Education information")
+                    }
+                } else if (componentName === 'personal' || componentName === 'education') {
                     setActiveComponent(componentName)
+                }
+                else {
+                    toast.error("Submit or add the Education information")
                 }
                 break;
             case 'work':
-                if (componentName === 'keyskill' && state.experience.workexp === null) {
-                    toast.error("Submit or add the Work information")
+                if (componentName === 'keyskill') {
 
-                } else {
+                    if (state.resumeinfo.workexp !== null) {
+
+                        setActiveComponent(componentName)
+                    } else {
+                        toast.error("Submit or add the Work information")
+                    }
+                } else if (componentName === 'personal' || componentName === 'education' || componentName === 'work') {
                     setActiveComponent(componentName)
+                }
+                else {
+                    toast.error("Submit or add the Work information")
                 }
                 break;
             case 'keyskill':
-                if (componentName === 'preview' && state.resumeinfo.skills === null) {
-                    toast.error("Submit or add the Skill information")
-
-                } else {
+                if (componentName === 'preview' && state.resumeinfo.skills !== null) {
                     setActiveComponent(componentName)
+
+                } else if (componentName === 'personal' || componentName === 'education' || componentName === 'work' || componentName === 'keyskill') {
+                    setActiveComponent(componentName)
+                }
+                else {
+                    toast.error("Submit or add the Skill information")
                 }
                 break;
             default:
@@ -73,21 +96,21 @@ const Detailfilling = () => {
                 if (state.resumeinfo.personalinfo !== null) {
                     setActiveComponent('education');
                 } else {
-                    toast.error("First Submit the information.")
+                    toast.error("Submit all the information.")
                 }
                 break;
             case 'education':
                 if (state.resumeinfo.Education !== null) {
                     setActiveComponent('work');
                 } else {
-                    toast.error("First Submit the information.")
+                    toast.error("Add the education information.")
                 }
                 break;
             case 'work':
                 if (state.resumeinfo.workexp !== null) {
                     setActiveComponent('keyskill');
                 } else {
-                    toast.error("First Submit the information.")
+                    toast.error("Add the work information.")
                 }
                 break;
             case 'keyskill':
@@ -96,7 +119,7 @@ const Detailfilling = () => {
                         navigate('/preview');
                     }
                 } else {
-                    toast.error("First Submit the information.")
+                    toast.error("Add all the information.")
                 }
                 break;
             default:
@@ -138,17 +161,13 @@ const Detailfilling = () => {
             <Navbar />
             <div className='maindetail'>
                 <Box className='detailbutton'>
-                    <Button sx={{ border: "1px solid" }} className={`${activeComponent === 'personal' ? 'bluebtn' : ''
-                        }`} onClick={() => handleSidebarClick('personal')}>Personal Info</Button>
+                    <Button sx={{ border: "1px solid" }} style={{ backgroundColor: activeComponent === 'personal' ? '#1976d2' : 'white', color: activeComponent === 'personal' ? 'white' : '#1976d2' }} onClick={() => handleSidebarClick('personal')}>Personal Info</Button>
 
-                    <Button sx={{ border: "1px solid" }} className={`${activeComponent === 'education' ? 'bluebtn' : ''
-                        }`} onClick={() => handleSidebarClick('education')}>Education</Button>
+                    <Button sx={{ border: "1px solid" }} style={{ backgroundColor: activeComponent === 'education' ? '#1976d2' : 'white', color: activeComponent === 'education' ? 'white' : '#1976d2' }} onClick={() => handleSidebarClick('education')}>Education</Button>
 
-                    <Button sx={{ border: "1px solid" }} className={`${activeComponent === 'work' ? 'bluebtn' : ''
-                        }`} onClick={() => handleSidebarClick('work')}>Work Experience</Button>
+                    <Button sx={{ border: "1px solid" }} style={{ backgroundColor: activeComponent === 'work' ? '#1976d2' : 'white', color: activeComponent === 'work' ? 'white' : '#1976d2' }} onClick={() => handleSidebarClick('work')}>Work Experience</Button>
 
-                    <Button sx={{ border: "1px solid" }} className={`${activeComponent === 'keyskill' ? 'bluebtn' : ''
-                        }`} onClick={() => handleSidebarClick('keyskill')}>Key Skills</Button>
+                    <Button sx={{ border: "1px solid" }} style={{ backgroundColor: activeComponent === 'keyskill' ? '#1976d2' : 'white', color: activeComponent === 'keyskill' ? 'white' : '#1976d2' }} onClick={() => handleSidebarClick('keyskill')}>Key Skills</Button>
                 </Box>
                 <Paper>
                     <div>
@@ -160,7 +179,7 @@ const Detailfilling = () => {
                     </div>
                 </Paper>
             </div>
-            <Box sx={{ display: "flex", mt: 3, margin: "5px", gap: "20px", position: 'fixed', bottom: 0, right: '50%', left: '50%' }}>
+            <Box className='dfbtn' >
                 <Button onClick={handleBack} variant='outlined'>Back</Button>
                 <Button onClick={handleNext} variant='contained'>{activeComponent === 'keyskill' ? (
 
