@@ -124,7 +124,7 @@ const Education = () => {
                             placeholder='Select University'
                             value={university}
                             onChange={(e) => setUniversity(e.target.value)}
-
+                            required
                         />
                         <TextField
                             label="Degree"
@@ -132,7 +132,7 @@ const Education = () => {
                             placeholder='Select Degree'
                             value={degree}
                             onChange={(e) => setDegree(e.target.value)}
-
+                            required
                         />
                     </Stack>
                     <Stack direction={'row'} spacing={3}>
@@ -141,14 +141,14 @@ const Education = () => {
                             fullWidth
                             value={startyear}
                             onChange={(e) => setStartyear(e.target.value)}
-
+                            required
                         />
                         <TextField
                             label="End Year"
                             fullWidth
                             value={endyear}
                             onChange={(e) => setEndyear(e.target.value)}
-
+                            required
                         />
 
                     </Stack>

@@ -78,6 +78,7 @@ const Skills = () => {
                             fullWidth
                             value={skill}
                             onChange={(e) => setSkill(e.target.value)}
+                            required
                         />
 
                     </Stack>

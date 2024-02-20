@@ -31,10 +31,12 @@ const PersonalInfo = () => {
 
     //for submit information onclick function
     const handlesubmit = () => {
-        if (name === '' || lastName === '' || email === '' || mobile === '' || address === '' || city === '' || state === '' || postalCode === '' || objective === '' || image === '') {
+        if (name === '' || lastName === '' || email === '' || mobile === '' || address === '' || city === '' || state === '' || postalCode === '' || objective === '') {
             toast.error("fill all the component")
         } else if (!email.match(emailRegex)) {
             toast.error('please fill valid email')
+        } else if (image === '') {
+            toast.error('please upload a photo')
         } else {
             //dipatch all the data to state
             dispatch(setPersonalInfo({
@@ -68,32 +70,32 @@ const PersonalInfo = () => {
             <Box className="maininputbox">
                 <Box className='firstinput'>
                     {/* for name input */}
-                    <TextField type="text" label="name" onChange={(e) => setName(e.target.value)} fullWidth />
+                    <TextField type="text" label="name" onChange={(e) => setName(e.target.value)} fullWidth required />
 
                     {/* for lastname input */}
-                    <TextField type="text" label="Lastname" onChange={(e) => setLastName(e.target.value)} fullWidth />
+                    <TextField type="text" label="Lastname" onChange={(e) => setLastName(e.target.value)} fullWidth required />
                 </Box>
                 <Box className="secondinput">
                     {/* for email input  */}
-                    <TextField type="email" label="email" onChange={(e) => setEmail(e.target.value)} fullWidth />
+                    <TextField type="email" label="email" onChange={(e) => setEmail(e.target.value)} fullWidth required />
                     {/* for mobile input  */}
-                    <TextField type="tel" label="mobile" onChange={(e) => setMobile(e.target.value)} fullWidth />
+                    <TextField type="tel" label="mobile" onChange={(e) => setMobile(e.target.value)} fullWidth required />
                 </Box>
                 <Box className="thirdinput">
                     {/* for address input  */}
-                    <TextField type="text" label="Address" onChange={(e) => setAddress(e.target.value)} fullWidth />
+                    <TextField type="text" label="Address" onChange={(e) => setAddress(e.target.value)} fullWidth required />
                 </Box>
                 <Box className="forthinput">
                     {/* for city input  */}
-                    <TextField type="text" label="City" onChange={(e) => setCity(e.target.value)} fullWidth />
+                    <TextField type="text" label="City" onChange={(e) => setCity(e.target.value)} fullWidth required />
                     {/* for state input  */}
-                    <TextField type="text" label="State" onChange={(e) => setState(e.target.value)} fullWidth />
+                    <TextField type="text" label="State" onChange={(e) => setState(e.target.value)} fullWidth required />
                     {/* for postal code input  */}
-                    <TextField type="text" label="Postal Code" onChange={(e) => setPostalCode(e.target.value)} fullWidth />
+                    <TextField type="text" label="Postal Code" onChange={(e) => setPostalCode(e.target.value)} fullWidth required />
                 </Box>
                 <Box className="fifthinput">
                     {/* for Objective input  */}
-                    <TextField type="text" label="Objective" onChange={(e) => setObjective(e.target.value)} fullWidth />
+                    <TextField type="text" label="Objective" onChange={(e) => setObjective(e.target.value)} fullWidth required />
                 </Box>
             </Box>
             {/* for submit information button  */}
