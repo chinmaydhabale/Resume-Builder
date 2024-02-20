@@ -3,20 +3,21 @@ import temp from '../../data/resumedata'
 import Homepagecard from './Homepagecard';
 import Navbar from '../../Component/Navbar';
 import './Homepage.css'
+import { Box } from '@mui/material';
 
 const Homepage = () => {
 
 
 
     return (
-        <div className='template'>
+        <Box className='template'>
             <Navbar />
-            <div style={{ padding: '15px' }}>
+            <Box sx={{ padding: '15px' }}>
                 <h1>Templates</h1>
                 <p>Select a Template to get started</p>
-            </div>
+            </Box>
             {/* iterate all the templates */}
-            <div className='AllTemplates' >
+            <Box className='AllTemplates' >
                 {temp.map((templates) => (
                     <Homepagecard
                         data={templates.data}
@@ -24,8 +25,8 @@ const Homepage = () => {
                         key={templates.id}
                     />
                 ))}
-            </div>
-        </div>
+            </Box>
+        </Box>
     )
 }
 

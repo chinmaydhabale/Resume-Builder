@@ -157,9 +157,9 @@ const Detailfilling = () => {
 
 
     return (
-        <div>
+        <Box>
             <Navbar />
-            <div className='maindetail'>
+            <Box className='maindetail'>
                 {/* sidebar buttons */}
                 <Box className='detailbutton'>
                     <Button sx={{ border: "1px solid" }} style={{ backgroundColor: activeComponent === 'personal' ? '#1976d2' : 'white', color: activeComponent === 'personal' ? 'white' : '#1976d2' }} onClick={() => handleSidebarClick('personal')}>Personal Info</Button>
@@ -171,15 +171,15 @@ const Detailfilling = () => {
                     <Button sx={{ border: "1px solid" }} style={{ backgroundColor: activeComponent === 'keyskill' ? '#1976d2' : 'white', color: activeComponent === 'keyskill' ? 'white' : '#1976d2' }} onClick={() => handleSidebarClick('keyskill')}>Key Skills</Button>
                 </Box>
                 <Paper>
-                    <div>
+                    <Box>
                         {/* Render component based on activeComponent */}
                         {activeComponent === 'personal' && <PersonalInfo />}
                         {activeComponent === 'education' && <Education />}
                         {activeComponent === 'work' && <Workexp />}
                         {activeComponent === 'keyskill' && <Skills />}
-                    </div>
+                    </Box>
                 </Paper>
-            </div>
+            </Box>
             {/* next and back component  */}
             <Box className='dfbtn' >
                 <Button onClick={handleBack} variant='outlined'>Back</Button>
@@ -191,7 +191,7 @@ const Detailfilling = () => {
                     'Next'
                 )}</Button>
             </Box>
-        </div>
+        </Box>
     )
 }
 

@@ -56,7 +56,7 @@ const PersonalInfo = () => {
     }
 
     return (
-        <div className='maindivp'>
+        <Box className='maindivp'>
 
             {/* when we submit detail it show massage its submited or already submited  */}
             {personalinfostate !== null && <h2 style={{ color: 'green', padding: '15px' }}>Submited successfully</h2>}
@@ -102,7 +102,7 @@ const PersonalInfo = () => {
                     Submit
                 </Button>
             </Box>
-        </div>
+        </Box>
     )
 }
 

@@ -25,7 +25,6 @@ const Preview = () => {
   //for download the resume function
   const handlesave = () => {
     const input = document.getElementById("print");
-    console.log(document);
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL("image/png");
@@ -46,12 +45,12 @@ const Preview = () => {
   }
 
   return (
-    <div>
-      <div >
+    <Box>
+      <Box >
 
         <Navbar />
-      </div>
-      <div className='resumepreview' >
+      </Box>
+      <Box className='resumepreview' >
         {/* for resume preview  */}
         <div className='resume' id='print' >
           {state.data}
@@ -68,8 +67,8 @@ const Preview = () => {
             <Button onClick={handlesave}>Save</Button>
           </Box>
         </Box>
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 

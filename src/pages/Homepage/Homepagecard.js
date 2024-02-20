@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { setselectresume } from '../../redux/slice/templateslice';
 import { useDispatch } from 'react-redux';
 import './Homepage.css'
+import { Box, Button } from '@mui/material';
 
 const Homepagecard = ({ data, thumbnail }) => {
 
@@ -33,8 +34,8 @@ const Homepagecard = ({ data, thumbnail }) => {
     return (
         <>
             {/*main Content*/}
-            <div style={{ margin: '3vh 1vw', height: 'auto', width: 'auto', position: 'relative' }}>
-                <div>
+            <Box sx={{ margin: '3vh 1vw', height: 'auto', width: 'auto', position: 'relative' }}>
+                <Box>
                     {/*Show Templates Dummy Images*/}
                     <img
                         className='templateimgh'
@@ -52,8 +53,9 @@ const Homepagecard = ({ data, thumbnail }) => {
                     {/*Show the button only when hovered*/}
                     {isHovered && (
                         //Resume select Button
-                        <button
-                            style={{
+                        <Button
+                            variant='contained'
+                            sx={{
                                 position: 'absolute',
                                 left: '50%',
                                 top: '50%',
@@ -65,10 +67,10 @@ const Homepagecard = ({ data, thumbnail }) => {
                             onMouseLeave={handleHoverExit} // Handle hover exit event
                         >
                             Select
-                        </button>
+                        </Button>
                     )}
-                </div>
-            </div>
+                </Box>
+            </Box>
         </>
     )
 }
