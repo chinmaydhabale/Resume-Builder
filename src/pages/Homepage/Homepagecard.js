@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import './Homepage.css'
 import { Box, Button } from '@mui/material';
 
-const Homepagecard = ({ data, thumbnail }) => {
+const Homepagecard = ({ data, thumbnail, id }) => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -13,14 +13,17 @@ const Homepagecard = ({ data, thumbnail }) => {
 
     const template = {
         data,
-        thumbnail
+        thumbnail,
+        id
     }
 
     //to select the resume button
     const onSubmit = () => {
-        dispatch(setselectresume(template))
+        dispatch(setselectresume(template.id))
         navigate('/Detailfilling');
     };
+
+
 
     // for resume hover effect and Set isHovered to true when the mouse leaves the image
     const handleHover = () => {

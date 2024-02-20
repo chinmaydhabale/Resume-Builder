@@ -18,11 +18,12 @@ const Homepage = () => {
             </Box>
             {/* iterate all the templates */}
             <Box className='AllTemplates' >
-                {temp.map((templates) => (
+                {temp.map((templates, i) => (
                     <Homepagecard
                         data={templates.data}
                         thumbnail={templates.thumbnail}
-                        key={templates.id}
+                        id={templates.id}
+                        key={i}
                     />
                 ))}
             </Box>

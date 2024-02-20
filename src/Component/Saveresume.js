@@ -7,6 +7,9 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { useState } from 'react';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
+import temp from '../data/resumedata';
+
+
 
 function Saveresume() {
 
@@ -26,6 +29,12 @@ function Saveresume() {
     const handleHoverExit = () => {
         setIsHovered(false);
     };
+
+
+    //get a selected template
+    const gettemplate = temp.find((arg) => {
+        return arg.id === state
+    })
 
     // Function to download the resume as PDF
     const downloadResume = async () => {
@@ -58,12 +67,12 @@ function Saveresume() {
 
                 >
                     {state && state.data !== null ? (
-                        <div style={{ opacity: isHovered ? 0.7 : 1 }}>{state.data}</div>
+                        <div style={{ opacity: isHovered ? 0.7 : 1 }}>{gettemplate.data}</div>
                     ) : (
                         <img style={{ width: '15vw', marginTop: '10vw' }} src={nodata} alt='' />
                     )}
                 </div>
-                {state && state.data ? (
+                {state && (
                     <Button
                         variant='contained'
                         color='primary'
@@ -81,8 +90,6 @@ function Saveresume() {
                     >
                         <CloudDownloadIcon /> Download
                     </Button>
-                ) : (
-                    ''
                 )}
             </div>
         </>

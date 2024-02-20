@@ -51,9 +51,9 @@ const Thirdresume = () => {
             Professional Experience
           </Typography>
           <Divider />
-          {state.resumeinfo.workexp.map((work) => {
+          {state.resumeinfo.workexp.map((work, i) => {
             return (
-              <Box className="listpad">
+              <Box className="listpad" key={i}>
 
                 <h2>{work.title}</h2>
                 <li>{work.Organization}</li>
@@ -70,8 +70,8 @@ const Thirdresume = () => {
           </Typography>
           <Divider />
 
-          {state.resumeinfo.Education.map((edu) => {
-            return (<Box className="listpad">
+          {state.resumeinfo.Education.map((edu, i) => {
+            return (<Box className="listpad" key={i}>
               <h2>{edu.type}</h2>
               <li>{edu.university}</li>
               <li>{edu.degree}</li>
@@ -88,9 +88,9 @@ const Thirdresume = () => {
 
           <Box className="listpad">
             {
-              state.resumeinfo.skills.map((skill) => {
+              state.resumeinfo.skills.map((skill, i) => {
 
-                return (<li>{skill.skills}</li>)
+                return (<li key={i}>{skill.skills}</li>)
               })
             }
           </Box>

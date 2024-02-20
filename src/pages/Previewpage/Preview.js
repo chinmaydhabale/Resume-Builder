@@ -9,7 +9,7 @@ import './Preview.css'
 import toast from 'react-hot-toast';
 import { setsaveresume } from '../../redux/slice/templateslice';
 import { setresumename } from '../../redux/slice/templateslice';
-// import temp from '../data/resumedata'
+import temp from '../../data/resumedata';
 
 const Preview = () => {
   const navigate = useNavigate()
@@ -21,6 +21,13 @@ const Preview = () => {
   const handleback = () => {
     navigate('/Detailfilling')
   }
+
+  //get a selected resume
+  const gettemplate = temp.find((arg) => {
+    return arg.id === state
+  })
+
+
 
   //for download the resume function
   const handlesave = () => {
@@ -53,7 +60,7 @@ const Preview = () => {
       <Box className='resumepreview' >
         {/* for resume preview  */}
         <div className='resume' id='print' >
-          {state.data}
+          {gettemplate.data}
 
         </div>
         <Box className='downloadbox' sx={{ border: '2px solid blue', padding: '18px', margin: 'auto', width: "50%" }}>

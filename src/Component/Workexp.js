@@ -74,8 +74,8 @@ const Workexp = () => {
 
                     {/* to show data  */}
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                        {state && state.map((val) => {
-                            return (<Box key={val.id} display={"flex"} border={"1px solid"} justifyContent={"space-between"} padding={"5px"}>
+                        {state && state.map((val, i) => {
+                            return (<Box key={i} display={"flex"} border={"1px solid"} justifyContent={"space-between"} padding={"5px"}>
                                 <Box>
                                     <Typography marginTop={"6px"}>
                                         Type: {val.title}
