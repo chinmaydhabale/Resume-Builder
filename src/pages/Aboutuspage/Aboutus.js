@@ -44,8 +44,8 @@ function Aboutus() {
                     <Box sx={{ marginRight: "2vh" }}>
                         {/* Facebook share button */}
                         <FacebookShareButton
-                            url={'https://65d21b318057b9461a8de536--mellow-alpaca-1587c3.netlify.app/'}
-                            quote={'Title or jo bhi aapko likhna ho'}
+                            url={'https://resume-builder-bay.vercel.app/'}
+                            quote={'create your own resume'}
                             hashtag={'#portfolio...'}
                         >
                             <FacebookIcon className='buttonIcons' size={40} round={true} />
@@ -55,8 +55,8 @@ function Aboutus() {
                     <Box sx={{ marginRight: "2vh" }}>
                         {/* LinkedIn share button */}
                         <LinkedinShareButton
-                            url={'https://65d21b318057b9461a8de536--mellow-alpaca-1587c3.netlify.app/'}
-                            quote={'Title or jo bhi aapko likhna ho'}
+                            url={'https://resume-builder-bay.vercel.app/'}
+                            quote={'create your own resume'}
                             hashtag={'#portfolio...'}
                         >
                             <LinkedinIcon className='buttonIcons' size={40} round={true} />
@@ -66,8 +66,8 @@ function Aboutus() {
                     <Box sx={{ marginRight: "2vh" }}>
                         {/* WhatsApp share button */}
                         <WhatsappShareButton
-                            url={'https://65d21b318057b9461a8de536--mellow-alpaca-1587c3.netlify.app/'}
-                            quote={'Title or jo bhi aapko likhna ho'}
+                            url={'https://resume-builder-bay.vercel.app/'}
+                            quote={'create your own resume'}
                             hashtag={'#portfolio...'}
                         >
                             <WhatsappIcon className='buttonIcons' size={40} round={true} />
